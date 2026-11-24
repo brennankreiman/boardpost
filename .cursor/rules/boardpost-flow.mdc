@@ -1,0 +1,19 @@
+---
+description: Boardpost architecture and boundaries for agents working in this repo
+alwaysApply: true
+---
+
+# Boardpost
+
+Read `AGENTS.md` before changing the board, the year files, or the submission Worker.
+
+- Static site in `public/`. No database, accounts, OAuth, or per-user quotas.
+- Events live in `public/data/events/YYYY.json`. `index.json` lists those years ascending.
+- The browser fetches only the years `selectYears` picks, then filters with `filterEvents`.
+- Add an event posts to the Cloudflare Worker. The Worker opens a GitHub issue labeled `submission`. The event is not public until that JSON is merged into the year file.
+- A duplicate is the same normalized name and date, or the same normalized registration URL and date. A different day is allowed.
+- Categories come from `public/lib/categories.js` and stay alphabetical. Do not hardcode them.
+- Import validation and duplicate checks from `public/lib`. Do not copy them.
+- `GITHUB_TOKEN` is a Worker secret. Never commit it or `.dev.vars`.
+- Keep asset URLs relative. Pages deploys `public/` and does not update the Worker.
+- After a behavior change, run `npm test`.
