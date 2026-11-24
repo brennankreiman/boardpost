@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "node --test test/**/*.test.js",
+    "test": "node --test test/*.test.js",
     "worker:dev": "wrangler dev",
     "worker:check": "wrangler deploy --dry-run",
     "worker:deploy": "wrangler deploy"
