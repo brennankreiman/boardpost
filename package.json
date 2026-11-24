@@ -1,0 +1,18 @@
+{
+  "name": "boardpost",
+  "version": "0.1.0",
+  "description": "Cycling events post board — dates, registration deadlines, cost, and signup links in one place.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

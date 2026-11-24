@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>boardpost — cycling events board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="brand">boardpost</p>
+        <p class="tagline">Public cycling events, posted in one place.</p>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn btn-ghost btn-small" id="clear-filters">Clear filters</button>
+        <button type="button" class="btn btn-primary" id="open-form">Post an event</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="filters" aria-label="Filter events">
+        <label class="field grow">
+          <span>Search</span>
+          <input type="search" id="filter-q" placeholder="Race name or place" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Category</span>
+          <select id="filter-category">
+            <option value="All">All</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>From</span>
+          <input type="date" id="filter-from" />
+        </label>
+        <label class="field">
+          <span>To</span>
+          <input type="date" id="filter-to" />
+        </label>
+      </section>
+
+      <section class="board-meta">
+        <p id="result-count">Loading events…</p>
+      </section>
+
+      <section class="board" id="board" aria-live="polite"></section>
+    </main>
+
+    <dialog id="event-dialog" class="event-dialog">
+      <form method="dialog" id="event-form">
+        <header>
+          <h2>Post an event</h2>
+          <button type="button" class="icon-close" id="close-form" aria-label="Close">×</button>
+        </header>
+
+        <div class="form-grid">
+          <label class="field span-2">
+            <span>Event name</span>
+            <input name="name" required maxlength="120" placeholder="e.g. Local gravel fondo" />
+          </label>
+          <label class="field">
+            <span>Event date</span>
+            <input name="eventDate" type="date" required />
+          </label>
+          <label class="field">
+            <span>Register by</span>
+            <input name="registrationDeadline" type="date" required />
+          </label>
+          <label class="field">
+            <span>Cost</span>
+            <input name="cost" required maxlength="40" placeholder="$75 or Free" />
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select name="category" id="form-category" required></select>
+          </label>
+          <label class="field span-2">
+            <span>Registration URL <em>(optional)</em></span>
+            <input name="registrationUrl" type="url" placeholder="https://" />
+          </label>
+          <label class="field span-2">
+            <span>Location <em>(optional)</em></span>
+            <input name="location" maxlength="80" placeholder="City, ST" />
+          </label>
+        </div>
+
+        <p class="form-error" id="form-error" hidden></p>
+
+        <footer class="form-actions">
+          <button type="button" class="btn btn-ghost" id="cancel-form">Cancel</button>
+          <button type="submit" class="btn btn-primary">Post to board</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+---
+description: Keep event type (category) menus alphabetically sorted
+alwaysApply: true
+---
+
+# Event categories
+
+- Event type / category lists must always be **alphabetical (A→Z)** via `localeCompare`.
+- Source of truth: `lib/categories.js` (`CATEGORIES` / `listCategories()`).
+- When adding or renaming a category, update `lib/categories.js` and keep the array A→Z.
+- Do not hardcode an unsorted category order in the UI; load from `/api/categories`.
+- Prefer leaving `"All"` as the first filter option in the UI; sort only real categories.
+- After category changes, run `npm test` (includes a sort invariant test).
+
+```js
+// ❌ BAD — insertion order / ad hoc
+["Road", "Gravel", "Alleycat"]
+
+// ✅ GOOD — alphabetical
+["Alleycat", "Gravel", "Road"]
+```

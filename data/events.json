@@ -1,0 +1,132 @@
+[
+  {
+    "id": "evt-009",
+    "name": "Autumn Crit Series Finale",
+    "eventDate": "2026-10-12",
+    "registrationDeadline": "2026-10-05",
+    "cost": "$35",
+    "registrationUrl": "https://www.usacycling.org/",
+    "category": "Road",
+    "location": "Portland, OR",
+    "source": "seed"
+  },
+  {
+    "id": "evt-010",
+    "name": "Harvest Gravel Classic",
+    "eventDate": "2026-11-01",
+    "registrationDeadline": "2026-10-20",
+    "cost": "$110",
+    "category": "Gravel",
+    "location": "Bend, OR",
+    "source": "seed"
+  },
+  {
+    "id": "evt-001",
+    "name": "Sea Otter Classic — Gran Fondo",
+    "eventDate": "2027-04-18",
+    "registrationDeadline": "2027-04-01",
+    "cost": "$95–$145",
+    "registrationUrl": "https://www.seaotterclassic.com/",
+    "category": "Road",
+    "location": "Monterey, CA",
+    "source": "seed"
+  },
+  {
+    "id": "evt-002",
+    "name": "Belgian Waffle Ride — San Diego",
+    "eventDate": "2027-05-02",
+    "registrationDeadline": "2027-04-20",
+    "cost": "$189",
+    "registrationUrl": "https://belgianwaffleride.bike/",
+    "category": "Gravel",
+    "location": "San Diego, CA",
+    "source": "seed"
+  },
+  {
+    "id": "evt-003",
+    "name": "Leadville Trail 100 MTB",
+    "eventDate": "2027-08-08",
+    "registrationDeadline": "2027-06-15",
+    "cost": "$395",
+    "registrationUrl": "https://www.leadvilleraceseries.com/",
+    "category": "MTB",
+    "location": "Leadville, CO",
+    "source": "seed"
+  },
+  {
+    "id": "evt-004",
+    "name": "CrossVegas Cyclocross",
+    "eventDate": "2026-12-06",
+    "registrationDeadline": "2026-11-28",
+    "cost": "$55",
+    "registrationUrl": "https://www.crossvegas.com/",
+    "category": "Cyclocross",
+    "location": "Las Vegas, NV",
+    "source": "seed"
+  },
+  {
+    "id": "evt-005",
+    "name": "AIDS/LifeCycle Training Ride — Golden Gate",
+    "eventDate": "2027-03-22",
+    "registrationDeadline": "2027-03-15",
+    "cost": "Free",
+    "registrationUrl": "https://www.aidslifecycle.org/",
+    "category": "Charity",
+    "location": "San Francisco, CA",
+    "source": "seed"
+  },
+  {
+    "id": "evt-006",
+    "name": "Tour of California Amateur Criteriums",
+    "eventDate": "2027-06-12",
+    "registrationDeadline": "2027-06-05",
+    "cost": "$45",
+    "registrationUrl": "https://www.usacycling.org/",
+    "category": "Road",
+    "location": "Sacramento, CA",
+    "source": "seed"
+  },
+  {
+    "id": "evt-007",
+    "name": "SBT GRVL",
+    "eventDate": "2027-08-15",
+    "registrationDeadline": "2027-07-01",
+    "cost": "$225",
+    "registrationUrl": "https://www.sbtgrvl.com/",
+    "category": "Gravel",
+    "location": "Steamboat Springs, CO",
+    "source": "seed"
+  },
+  {
+    "id": "evt-008",
+    "name": "Whiskey Off-Road",
+    "eventDate": "2027-04-25",
+    "registrationDeadline": "2027-04-10",
+    "cost": "$165",
+    "registrationUrl": "https://www.epicrides.com/",
+    "category": "MTB",
+    "location": "Prescott, AZ",
+    "source": "seed"
+  },
+  {
+    "id": "evt-011",
+    "name": "North American Cycle Courier Championship 2026",
+    "eventDate": "2026-10-26",
+    "registrationDeadline": "2026-10-19",
+    "cost": "See event",
+    "category": "Cycle Messenger",
+    "location": "Guadalajara, Mexico",
+    "source": "seed"
+  },
+  {
+    "id": "evt-012",
+    "name": "North American Cycle Courier Championship 2027",
+    "eventDate": "2027-08-28",
+    "registrationDeadline": "2026-12-31",
+    "cost": "$50 early pre-order",
+    "registrationUrl": "https://www.zeffy.com/en-CA/ticketing/naccc--2027",
+    "category": "Cycle Messenger",
+    "location": "Toronto, Canada",
+    "source": "seed"
+  }
+]
