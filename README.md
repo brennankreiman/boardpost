@@ -4,8 +4,6 @@ Cycling events board. Upcoming rides and races, with the date, register-by date,
 
 > **Status:** MVP. The board is static files on GitHub Pages. New events are submitted from the site and reviewed as GitHub issues before they are added to the year files.
 
-Agents working in this repo should read [AGENTS.md](AGENTS.md) before changing the board, the year files, or the submission Worker.
-
 Live site, once Pages is enabled on the public repository: [https://brennankreiman.github.io/boardpost/](https://brennankreiman.github.io/boardpost/)
 
 ## What's on the board
