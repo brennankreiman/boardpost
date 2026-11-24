@@ -1,3 +1,7 @@
+import { filterEvents, todayISODate } from "./lib/filter-events.js";
+import { listCategories } from "./lib/categories.js";
+import { selectYears } from "./lib/select-years.js";
+
 const board = document.getElementById("board");
 const resultCount = document.getElementById("result-count");
 const filterQ = document.getElementById("filter-q");
@@ -8,7 +12,10 @@ const openFormBtn = document.getElementById("open-form");
 const dialog = document.getElementById("event-dialog");
 const form = document.getElementById("event-form");
 const formCategory = document.getElementById("form-category");
-const formError = document.getElementById("form-error");
+const formNote = document.getElementById("form-note");
+const submitBtn = form.querySelector("[type=submit]");
+
+const SUBMISSION_URL = "https://boardpost-submissions.brennankreiman.workers.dev";
 
 const dateFmt = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -39,38 +46,39 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-async function loadCategories() {
-  const res = await fetch("/api/categories");
-  const categories = await res.json();
-
-  for (const category of categories) {
-    filterCategory.insertAdjacentHTML(
-      "beforeend",
-      `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`
-    );
-    formCategory.insertAdjacentHTML(
-      "beforeend",
-      `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`
-    );
+function loadCategories() {
+  for (const category of listCategories()) {
+    const option = `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`;
+    filterCategory.insertAdjacentHTML("beforeend", option);
+    formCategory.insertAdjacentHTML("beforeend", option);
   }
 }
 
-function buildQuery() {
-  const params = new URLSearchParams();
-  if (filterQ.value.trim()) params.set("q", filterQ.value.trim());
-  if (filterCategory.value && filterCategory.value !== "All") {
-    params.set("category", filterCategory.value);
-  }
-  if (filterFrom.value) params.set("from", filterFrom.value);
-  if (filterTo.value) params.set("to", filterTo.value);
-  const qs = params.toString();
-  return qs ? `/api/events?${qs}` : "/api/events";
+async function loadEvents() {
+  const indexRes = await fetch("data/events/index.json");
+  if (!indexRes.ok) throw new Error("Failed to load event index");
+  const index = await indexRes.json();
+  const years = selectYears(index.years, {
+    from: filterFrom.value,
+    to: filterTo.value,
+    today: todayISODate(),
+  });
+
+  const groups = await Promise.all(
+    years.map(async (year) => {
+      const res = await fetch(`data/events/${year}.json`);
+      if (!res.ok) throw new Error(`Failed to load ${year} events`);
+      return res.json();
+    })
+  );
+
+  return groups.flat();
 }
 
 function renderEvents(events) {
   if (!events.length) {
     resultCount.textContent = "No events match these filters.";
-    board.innerHTML = `<div class="empty">Try clearing filters or post a new event.</div>`;
+    board.innerHTML = `<div class="empty">Try clearing filters, or <button type="button" data-open-event-form>add an event</button>.</div>`;
     return;
   }
 
@@ -117,9 +125,13 @@ function renderEvents(events) {
 
 async function refreshBoard() {
   try {
-    const res = await fetch(buildQuery());
-    if (!res.ok) throw new Error("Failed to load events");
-    const events = await res.json();
+    const events = filterEvents(await loadEvents(), {
+      category: filterCategory.value,
+      q: filterQ.value.trim(),
+      from: filterFrom.value,
+      to: filterTo.value,
+      today: todayISODate(),
+    });
     renderEvents(events);
   } catch (err) {
     console.error(err);
@@ -145,46 +157,65 @@ function clearFilters() {
 
 document.getElementById("clear-filters").addEventListener("click", clearFilters);
 
-function closeEventForm() {
-  formError.hidden = true;
+function setFormNote(message, kind) {
+  if (!message) {
+    formNote.hidden = true;
+    formNote.textContent = "";
+    delete formNote.dataset.kind;
+    return;
+  }
+  formNote.hidden = false;
+  formNote.dataset.kind = kind;
+  formNote.textContent = message;
+}
+
+function openEventForm() {
   form.reset();
+  submitBtn.disabled = false;
+  setFormNote("");
+  dialog.showModal();
+}
+
+function closeEventForm() {
   dialog.close();
 }
 
-openFormBtn.addEventListener("click", () => {
-  formError.hidden = true;
-  form.reset();
-  dialog.showModal();
-});
-
+openFormBtn.addEventListener("click", openEventForm);
 document.getElementById("close-form").addEventListener("click", closeEventForm);
 document.getElementById("cancel-form").addEventListener("click", closeEventForm);
+board.addEventListener("click", (event) => {
+  if (event.target.closest("[data-open-event-form]")) openEventForm();
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  formError.hidden = true;
+  setFormNote("");
+
+  if (!SUBMISSION_URL) {
+    setFormNote("Submissions aren't connected yet.", "error");
+    return;
+  }
 
   const data = Object.fromEntries(new FormData(form).entries());
-
+  submitBtn.disabled = true;
   try {
-    const res = await fetch("/api/events", {
+    const res = await fetch(SUBMISSION_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    const payload = await res.json();
+    const payload = await res.json().catch(() => ({}));
     if (!res.ok) {
-      formError.textContent = payload.error || "Could not save event.";
-      formError.hidden = false;
+      setFormNote(payload.error || "Could not submit the event. Try again.", "error");
       return;
     }
-
-    closeEventForm();
-    await refreshBoard();
+    form.reset();
+    setFormNote("Submitted for review. It will show on the board after it's approved.", "ok");
   } catch (err) {
     console.error(err);
-    formError.textContent = "Network error — try again.";
-    formError.hidden = false;
+    setFormNote("Could not submit the event. Try again.", "error");
+  } finally {
+    submitBtn.disabled = false;
   }
 });
 
@@ -193,5 +224,5 @@ for (const el of [filterQ, filterCategory, filterFrom, filterTo]) {
   el.addEventListener("change", scheduleRefresh);
 }
 
-await loadCategories();
+loadCategories();
 await refreshBoard();

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -22,7 +22,7 @@
       </div>
       <div class="header-actions">
         <button type="button" class="btn btn-ghost btn-small" id="clear-filters">Clear filters</button>
-        <button type="button" class="btn btn-primary" id="open-form">Post an event</button>
+        <button type="button" class="btn btn-primary" id="open-form">Add an event</button>
       </div>
     </header>
 
@@ -56,9 +56,9 @@
     </main>
 
     <dialog id="event-dialog" class="event-dialog">
-      <form method="dialog" id="event-form">
+      <form id="event-form">
         <header>
-          <h2>Post an event</h2>
+          <h2>Add an event</h2>
           <button type="button" class="icon-close" id="close-form" aria-label="Close">×</button>
         </header>
 
@@ -81,7 +81,9 @@
           </label>
           <label class="field">
             <span>Category</span>
-            <select name="category" id="form-category" required></select>
+            <select name="category" id="form-category" required>
+              <option value="" selected>Choose</option>
+            </select>
           </label>
           <label class="field span-2">
             <span>Registration URL <em>(optional)</em></span>
@@ -93,15 +95,15 @@
           </label>
         </div>
 
-        <p class="form-error" id="form-error" hidden></p>
+        <p class="form-note" id="form-note" hidden></p>
 
         <footer class="form-actions">
           <button type="button" class="btn btn-ghost" id="cancel-form">Cancel</button>
-          <button type="submit" class="btn btn-primary">Post to board</button>
+          <button type="submit" class="btn btn-primary">Submit for review</button>
         </footer>
       </form>
     </dialog>
 
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

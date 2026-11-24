@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { filterEvents } from "../lib/filter-events.js";
+import { filterEvents } from "../public/lib/filter-events.js";
 
 const sample = [
   {

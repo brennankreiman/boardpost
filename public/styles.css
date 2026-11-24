@@ -71,6 +71,11 @@ main,
   line-height: 0.95;
 }
 
+.brand a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .tagline {
   margin: 0.55rem 0 0;
   max-width: 28rem;
@@ -275,6 +280,16 @@ main {
   background: #2c3b22;
 }
 
+.empty button {
+  border: none;
+  padding: 0;
+  background: none;
+  color: var(--lane);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .empty,
 .error-state {
   padding: 2.5rem 1.25rem;
@@ -336,10 +351,18 @@ main {
   grid-column: span 2;
 }
 
-.form-error {
+.form-note {
   margin: 0.9rem 0 0;
-  color: var(--danger);
   font-size: 0.92rem;
+}
+
+.form-note[data-kind="error"] {
+  color: var(--danger);
+}
+
+.form-note[data-kind="ok"] {
+  color: var(--lane);
+  font-weight: 600;
 }
 
 .form-actions {

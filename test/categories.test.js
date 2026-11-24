@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { CATEGORIES, listCategories } from "../lib/categories.js";
+import { CATEGORIES, listCategories } from "../public/lib/categories.js";
 
 describe("CATEGORIES", () => {
   it("is sorted alphabetically A→Z", () => {

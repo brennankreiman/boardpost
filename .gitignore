@@ -3,3 +3,7 @@ node_modules/
 *.log
 .env
 .env.*
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/

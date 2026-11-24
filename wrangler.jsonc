@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "boardpost-submissions",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-23",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 }
+  },
+  "vars": {
+    "GITHUB_OWNER": "brennankreiman",
+    "GITHUB_REPO": "boardpost",
+    "ALLOWED_ORIGINS": "http://localhost:3000,http://127.0.0.1:3000,https://brennankreiman.github.io"
+  },
+  "secrets": {
+    "required": ["GITHUB_TOKEN"]
+  }
+}

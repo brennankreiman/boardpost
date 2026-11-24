@@ -1,0 +1,44 @@
+[
+  {
+    "id": "evt-009",
+    "name": "Autumn Crit Series Finale",
+    "eventDate": "2026-10-12",
+    "registrationDeadline": "2026-10-05",
+    "cost": "$35",
+    "registrationUrl": "https://www.usacycling.org/",
+    "category": "Road",
+    "location": "Portland, OR",
+    "source": "seed"
+  },
+  {
+    "id": "evt-011",
+    "name": "North American Cycle Courier Championship 2026",
+    "eventDate": "2026-10-26",
+    "registrationDeadline": "2026-10-19",
+    "cost": "See event",
+    "category": "Cycle Messenger",
+    "location": "Guadalajara, Mexico",
+    "source": "seed"
+  },
+  {
+    "id": "evt-010",
+    "name": "Harvest Gravel Classic",
+    "eventDate": "2026-11-01",
+    "registrationDeadline": "2026-10-20",
+    "cost": "$110",
+    "category": "Gravel",
+    "location": "Bend, OR",
+    "source": "seed"
+  },
+  {
+    "id": "evt-004",
+    "name": "CrossVegas Cyclocross",
+    "eventDate": "2026-12-06",
+    "registrationDeadline": "2026-11-28",
+    "cost": "$55",
+    "registrationUrl": "https://www.crossvegas.com/",
+    "category": "Cyclocross",
+    "location": "Las Vegas, NV",
+    "source": "seed"
+  }
+]
