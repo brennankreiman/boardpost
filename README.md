@@ -15,6 +15,16 @@ Live site, once Pages is enabled on the public repository: [https://brennankreim
 - Categories: Alleycat, Charity, Cycle Messenger, Cyclocross, Gravel, MTB, Other, Road, Track.
 - Seed events include NACCC 2026 (Guadalajara) and NACCC 2027 (Toronto).
 
+## Local board
+
+Some events are worth it only when you are already in that city: a bike swap, a group ride, a social gathering. Those are published on the local board (`local.html`). Open **Local** in the header. The local page links back to the main board.
+
+Every local event has a city, such as San Francisco, CA or Oakland, CA. City is required. A local event can also have one region, such as Bay Area. Region is optional. Leave it blank when the event does not have a wider area. San Francisco and Oakland events that share Bay Area both show when that region is selected. A city filter shows only that city. An event with a city and no region still shows when region is All, and when its city is selected. It stays off the list once a specific region is selected. City and region match regardless of capitalization, and each dropdown shows one spelling. The region list is the regions on the loaded events. Choosing a region narrows the cities to that region. Location stays optional and can name a venue or neighborhood.
+
+The date filters start at today through two years ahead, same as the main board. Categories are Bike Swap, Group Ride, and Social Gathering.
+
+**Submit a local event** asks for the name, dates, cost, and category, plus the city and an optional region. The region field suggests names already on the board. A region longer than 80 characters is rejected. A blank region is left off the stored event. The visitor stays on the page. The form says the event was submitted for review, and it posts to the same Worker at `https://boardpost-submissions.brennankreiman.workers.dev`. Accepted submissions become a GitHub issue labeled `submission`. The issue includes the JSON object to add to `public/data/local/YYYY.json`. The event shows on the local board only after that object is merged. The same duplicate rules apply inside that local year file: normalized name and date, or normalized registration URL and date.
+
 ## Add an event
 
 **Add an event** on the board asks for the name, event date, register-by date, cost, category, and optional location and registration URL. The visitor stays on the board. The form posts to the Cloudflare Worker at `https://boardpost-submissions.brennankreiman.workers.dev`.
@@ -36,6 +46,8 @@ npx wrangler secret put GITHUB_TOKEN
 3. Open a pull request. `npm test` checks dates, categories, that the index matches the files, and that no two events share a name and date or a registration URL and date.
 4. Merge into `cursor/cycling-events-board-mvp`. GitHub Pages publishes the `public/` folder. The duplicate check reads that branch, so the new event blocks a repeat only after the merge.
 
+A local event follows the same review. Copy its object into `public/data/local/YYYY.json`. When that year file is new, add the year to `public/data/local/index.json` in ascending order.
+
 ## Address
 
 GitHub Pages serves this repository at [https://brennankreiman.github.io/boardpost/](https://brennankreiman.github.io/boardpost/). The free plan requires a **public** repository. In the repository settings, set Pages to deploy from **GitHub Actions**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) uploads `public/` on every push to the default branch. [`.github/workflows/test.yml`](.github/workflows/test.yml) runs `npm test` on pull requests.
@@ -52,7 +64,7 @@ A name such as `boardpost.com` is a custom domain on top of Pages. No `boardpost
 ## Stack
 
 - Static HTML, CSS, and JS in `public/`
-- One JSON file per year in `public/data/events/`
+- One JSON file per year in `public/data/events/` and `public/data/local/`
 - Cloudflare Worker in [`worker/index.js`](worker/index.js) for form submissions
 - GitHub Pages and GitHub issues for publishing and review
 - Local preview: `npm start` serves `public/`
@@ -78,6 +90,8 @@ npm run worker:dev
 
 - `public/data/events/index.json` lists the years in ascending order
 - `public/data/events/YYYY.json` holds events whose `eventDate` is in that year
+- `public/data/local/index.json` lists the local years in ascending order
+- `public/data/local/YYYY.json` holds local events whose `eventDate` is in that year. Each object has a `city`. `region` is present only when the event has one.
 
 ## Project notes
 

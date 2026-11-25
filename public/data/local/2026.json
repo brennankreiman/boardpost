@@ -1,0 +1,30 @@
+[
+  {
+    "id": "loc-001",
+    "name": "Fort Mason Bike Swap",
+    "eventDate": "2026-12-05",
+    "registrationDeadline": "2026-11-28",
+    "cost": "Free",
+    "registrationUrl": "https://example.com/fort-mason-bike-swap",
+    "moreInfoUrl": "https://example.com/fort-mason-bike-swap/details",
+    "category": "Bike Swap",
+    "city": "San Francisco, CA",
+    "region": "Bay Area",
+    "location": "Fort Mason Center",
+    "description": "A parts and bike swap for people already in San Francisco. Bring a lock and anything you want to trade.",
+    "source": "seed"
+  },
+  {
+    "id": "loc-002",
+    "name": "Oakland Waterfront Group Ride",
+    "eventDate": "2026-12-19",
+    "registrationDeadline": "2026-12-17",
+    "cost": "Free",
+    "category": "Group Ride",
+    "city": "Oakland, CA",
+    "region": "Bay Area",
+    "location": "Middle Harbor Shoreline Park",
+    "description": "A no-drop ride along the Oakland waterfront. Show up if you are already in town.",
+    "source": "seed"
+  }
+]

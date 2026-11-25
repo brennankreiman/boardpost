@@ -1,4 +1,5 @@
 import { findDuplicates } from "../public/lib/duplicates.js";
+import { localSubmissionIssues, localSubmissionRecord } from "../public/lib/validate-local-submission.js";
 import { submissionIssues, submissionRecord } from "../public/lib/validate-submission.js";
 
 const MAX_BODY_BYTES = 8000;
@@ -52,17 +53,19 @@ export async function handleRequest(request, env, githubFetch = fetch) {
     return json({ error: "Submission must be JSON." }, 400, cors);
   }
 
-  const issues = submissionIssues(body);
+  const local = isLocalSubmission(body);
+  const issues = local ? localSubmissionIssues(body) : submissionIssues(body);
   if (issues.length) {
     return json({ error: issues[0] }, 400, cors);
   }
 
-  const event = submissionRecord(body);
+  const event = local ? localSubmissionRecord(body) : submissionRecord(body);
   const year = event.eventDate.slice(0, 4);
+  const collection = local ? "local" : "events";
 
   let existing;
   try {
-    existing = await loadYearEvents(env, year, githubFetch);
+    existing = await loadYearEvents(env, year, githubFetch, collection);
   } catch (err) {
     console.error(JSON.stringify({ message: "failed to read events", error: errorMessage(err) }));
     return json({ error: "Could not submit the event. Try again." }, 502, cors);
@@ -82,7 +85,7 @@ export async function handleRequest(request, env, githubFetch = fetch) {
   };
 
   try {
-    const issue = await createIssue(env, record, year, githubFetch);
+    const issue = await createIssue(env, record, year, githubFetch, collection);
     console.log(JSON.stringify({ message: "issue created", issue: issue.number }));
     return json({ ok: true }, 201, cors);
   } catch (err) {
@@ -144,8 +147,16 @@ function concatBytes(chunks, length) {
   return bytes;
 }
 
-async function loadYearEvents(env, year, githubFetch) {
-  const response = await github(env, githubFetch, `/repos/${repoPath(env)}/contents/public/data/events/${year}.json`);
+function isLocalSubmission(body) {
+  return Boolean(body && typeof body === "object" && !Array.isArray(body) && body.board === "local");
+}
+
+async function loadYearEvents(env, year, githubFetch, collection = "events") {
+  const response = await github(
+    env,
+    githubFetch,
+    `/repos/${repoPath(env)}/contents/public/data/${collection}/${year}.json`
+  );
   if (response.status === 404) return [];
   if (!response.ok) {
     throw new Error(`contents ${response.status}`);
@@ -158,13 +169,20 @@ async function loadYearEvents(env, year, githubFetch) {
   return events;
 }
 
-async function createIssue(env, record, year, githubFetch) {
-  const title = `Event: ${record.name} (${record.eventDate})`;
+async function createIssue(env, record, year, githubFetch, collection = "events") {
+  const title =
+    collection === "local"
+      ? `Local event: ${record.name} (${record.eventDate})`
+      : `Event: ${record.name} (${record.eventDate})`;
+  const intro =
+    collection === "local"
+      ? "Submitted from the local board for review."
+      : "Submitted from the board for review.";
   const body = [
-    "Submitted from the board for review.",
+    intro,
     "",
-    `Add this object to \`public/data/events/${year}.json\`.`,
-    "If that file does not exist, create it and add the year to `public/data/events/index.json`.",
+    `Add this object to \`public/data/${collection}/${year}.json\`.`,
+    `If that file does not exist, create it and add the year to \`public/data/${collection}/index.json\`.`,
     "",
     "```json",
     JSON.stringify(record, null, 2),
