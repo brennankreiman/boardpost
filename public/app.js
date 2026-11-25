@@ -146,12 +146,21 @@ function scheduleRefresh() {
   debounceTimer = setTimeout(refreshBoard, 180);
 }
 
+function defaultToDate(now = new Date()) {
+  const twoYearsOut = new Date(now.getFullYear() + 2, now.getMonth(), now.getDate());
+  return todayISODate(twoYearsOut);
+}
+
+function applyDefaultDateRange() {
+  filterFrom.value = todayISODate();
+  filterTo.value = defaultToDate();
+}
+
 function clearFilters() {
   clearTimeout(debounceTimer);
   filterQ.value = "";
   filterCategory.value = "All";
-  filterFrom.value = "";
-  filterTo.value = "";
+  applyDefaultDateRange();
   refreshBoard();
 }
 
@@ -225,4 +234,5 @@ for (const el of [filterQ, filterCategory, filterFrom, filterTo]) {
 }
 
 loadCategories();
+applyDefaultDateRange();
 await refreshBoard();

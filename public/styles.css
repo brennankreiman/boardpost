@@ -86,14 +86,7 @@ main,
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
   flex-shrink: 0;
-}
-
-.btn-small {
-  padding: 0.55rem 0.9rem;
-  font-size: 0.82rem;
-  font-weight: 600;
 }
 
 main {
@@ -102,10 +95,41 @@ main {
 
 .filters {
   display: grid;
-  grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 0.85rem;
   margin-bottom: 1.25rem;
   animation: rise 0.7s ease 0.08s both;
+  align-items: end;
+}
+
+.date-clear-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  align-items: end;
+}
+
+.date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.clear-slot {
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+.btn-clear {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  height: 2.7rem;
 }
 
 .field {
@@ -117,9 +141,10 @@ main {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
+  min-width: 0;
 }
 
-.field.grow {
+.filters > .grow {
   min-width: 0;
 }
 
@@ -388,6 +413,10 @@ main {
     grid-template-columns: 1fr 1fr;
   }
 
+  .date-clear-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .event-row {
     grid-template-columns: 1fr 1fr;
     gap: 0.85rem 1rem;
@@ -408,12 +437,11 @@ main {
     align-items: flex-start;
   }
 
-  .header-actions {
-    width: 100%;
-    justify-content: flex-end;
+  .filters {
+    grid-template-columns: 1fr;
   }
 
-  .filters {
+  .date-clear-row {
     grid-template-columns: 1fr;
   }
 
