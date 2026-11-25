@@ -1,0 +1,145 @@
+.header-actions {
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.event-dialog {
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}
+
+.event-name-btn {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.event-name-btn:hover {
+  color: var(--lane);
+}
+
+.event-place {
+  margin: 0.2rem 0 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.event-row {
+  cursor: pointer;
+}
+
+.event-row.is-expanded {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(31, 42, 24, 0.28);
+  transform: none;
+}
+
+.event-detail {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  cursor: default;
+}
+
+.detail-description {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.detail-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1rem;
+  margin: 0;
+}
+
+.detail-dialog {
+  width: min(560px, calc(100vw - 2rem));
+  max-height: min(720px, calc(100vh - 2rem));
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0;
+  background: #f7faf3;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.detail-dialog::backdrop {
+  background: rgba(18, 22, 15, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.detail-card {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.detail-card header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.detail-dialog h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+}
+
+.field textarea {
+  appearance: none;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  font: 500 0.98rem/1.4 var(--font-body);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  text-transform: none;
+  letter-spacing: 0;
+  resize: vertical;
+  min-height: 6.5rem;
+}
+
+.field textarea:focus {
+  outline: none;
+  border-color: var(--lane);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(200, 241, 53, 0.45);
+}
+
+@media (max-width: 640px) {
+  .detail-facts {
+    grid-template-columns: 1fr;
+  }
+}

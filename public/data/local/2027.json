@@ -1,0 +1,27 @@
+[
+  {
+    "id": "loc-003",
+    "name": "Alberta Street Social",
+    "eventDate": "2027-02-06",
+    "registrationDeadline": "2027-02-04",
+    "cost": "Free",
+    "category": "Social Gathering",
+    "city": "Portland, OR",
+    "region": "Pacific Northwest",
+    "location": "Alberta Street",
+    "description": "A casual meetup for riders who are already in Portland.",
+    "source": "seed"
+  },
+  {
+    "id": "loc-004",
+    "name": "RiNo Shop Night",
+    "eventDate": "2027-04-09",
+    "registrationDeadline": "2027-04-07",
+    "cost": "Free",
+    "category": "Social Gathering",
+    "city": "Denver, CO",
+    "location": "RiNo",
+    "description": "An evening hang at a neighborhood shop for anyone already in Denver.",
+    "source": "seed"
+  }
+]
