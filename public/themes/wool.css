@@ -1,0 +1,226 @@
+/* 2027-11 wool — brown, heavy noise texture */
+
+[data-theme="wool"],
+[data-theme="wool"] *,
+[data-theme="wool"] *::before,
+[data-theme="wool"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="wool"] {
+  container-type: inline-size;
+  container-name: theme-wool;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #6b4632;
+  color: #f6efe6;
+  color-scheme: dark;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background-color: #6a4330;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22240%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.45%22%20numOctaves%3D%225%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%22-1.5%22%2F%3E%3CfeFuncG%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%22-1.5%22%2F%3E%3CfeFuncB%20type%3D%22linear%22%20slope%3D%224%22%20intercept%3D%22-1.5%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
+  background-size: 220px 220px;
+  background-blend-mode: multiply;
+
+}
+
+[data-theme="wool"] button,
+[data-theme="wool"] input,
+[data-theme="wool"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="wool"] p {
+  margin: 0;
+}
+
+[data-theme="wool"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="wool"] .brand {
+  margin: 0;
+  font-family: "Fraunces", "Iowan Old Style", Palatino, serif;
+  font-weight: 560;
+  font-size: 2.2rem;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: #f6efe6;
+}
+
+[data-theme="wool"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #ead8c6;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="wool"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="wool"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #ead8c6;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="wool"] .field input,
+[data-theme="wool"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(246, 239, 230, 0.4);
+  border-radius: 8px;
+  background: rgba(42, 26, 18, 0.45);
+  color: #f6efe6;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="wool"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid rgba(246, 239, 230, 0.35);
+  border-radius: 10px;
+  background: rgba(62, 38, 26, 0.55);
+}
+
+[data-theme="wool"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="wool"] .event-name {
+  font-family: "Fraunces", "Iowan Old Style", Palatino, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="wool"] .event-location {
+  margin-top: 0.15rem;
+  color: #ead8c6;
+  font-size: 0.82rem;
+}
+
+[data-theme="wool"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #ead8c6;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="wool"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="wool"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #f0dcc8;
+  color: #3e281c;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="wool"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="wool"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #f0dcc8;
+  border-radius: 999px;
+  background: #f0dcc8;
+  color: #3e281c;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="wool"] .brand,
+[data-theme="wool"] .event-name,
+[data-theme="wool"] .meta-value {
+  text-shadow: 0 1px 0 rgba(40, 22, 12, 0.45);
+}
+
+@container theme-wool (max-width: 520px) {
+  [data-theme="wool"] .filters,
+  [data-theme="wool"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="wool"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="wool"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="wool"] .btn {
+    width: 100%;
+  }
+}
+
+[data-theme="wool"] .field input,
+[data-theme="wool"] .field select,
+[data-theme="wool"] .event-row {
+  background-color: rgba(54, 34, 24, 0.9);
+}

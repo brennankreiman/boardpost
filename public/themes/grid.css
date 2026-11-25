@@ -1,0 +1,223 @@
+/* 2027-04 grid — bright green, mono labels */
+
+[data-theme="grid"],
+[data-theme="grid"] *,
+[data-theme="grid"] *::before,
+[data-theme="grid"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="grid"] {
+  container-type: inline-size;
+  container-name: theme-grid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #d8ff3c;
+  color: #102006;
+  color-scheme: light;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background-image:
+    linear-gradient(rgba(16, 32, 6, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 32, 6, 0.16) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #d8ff3c;
+  border: 2px solid #102006;
+
+}
+
+[data-theme="grid"] button,
+[data-theme="grid"] input,
+[data-theme="grid"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="grid"] p {
+  margin: 0;
+}
+
+[data-theme="grid"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="grid"] .brand {
+  margin: 0;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #102006;
+}
+
+[data-theme="grid"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #1c3a0c;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="grid"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="grid"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #1c3a0c;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="grid"] .field input,
+[data-theme="grid"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #102006;
+  border-radius: 0;
+  background: #f7ffd6;
+  color: #102006;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="grid"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #102006;
+  border-radius: 0;
+  background: rgba(247, 255, 214, 0.88);
+}
+
+[data-theme="grid"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="grid"] .event-name {
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="grid"] .event-location {
+  margin-top: 0.15rem;
+  color: #1c3a0c;
+  font-size: 0.82rem;
+}
+
+[data-theme="grid"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #1c3a0c;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="grid"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="grid"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #102006;
+  color: #d8ff3c;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="grid"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="grid"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #102006;
+  border-radius: 0;
+  background: #102006;
+  color: #d8ff3c;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="grid"] .field,
+[data-theme="grid"] .meta-label,
+[data-theme="grid"] .category-pill,
+[data-theme="grid"] .btn {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@container theme-grid (max-width: 520px) {
+  [data-theme="grid"] .filters,
+  [data-theme="grid"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="grid"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="grid"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="grid"] .btn {
+    width: 100%;
+  }
+}

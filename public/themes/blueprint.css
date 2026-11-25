@@ -1,0 +1,233 @@
+/* 2028-01 blueprint — navy ground, thin white lines */
+
+[data-theme="blueprint"],
+[data-theme="blueprint"] *,
+[data-theme="blueprint"] *::before,
+[data-theme="blueprint"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="blueprint"] {
+  container-type: inline-size;
+  container-name: theme-blueprint;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #0b2456;
+  color: #f3f7ff;
+  color-scheme: dark;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background-color: #0b2456;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 18px 18px;
+
+}
+
+[data-theme="blueprint"] button,
+[data-theme="blueprint"] input,
+[data-theme="blueprint"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="blueprint"] p {
+  margin: 0;
+}
+
+[data-theme="blueprint"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="blueprint"] .brand {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  color: #f3f7ff;
+}
+
+[data-theme="blueprint"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #d5e2f7;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="blueprint"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="blueprint"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #d5e2f7;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="blueprint"] .field input,
+[data-theme="blueprint"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  background: rgba(8, 24, 64, 0.55);
+  color: #f3f7ff;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="blueprint"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  background: rgba(11, 36, 86, 0.78);
+}
+
+[data-theme="blueprint"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="blueprint"] .event-name {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="blueprint"] .event-location {
+  margin-top: 0.15rem;
+  color: #d5e2f7;
+  font-size: 0.82rem;
+}
+
+[data-theme="blueprint"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #d5e2f7;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="blueprint"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="blueprint"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="blueprint"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="blueprint"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #fff;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="blueprint"] .category-pill {
+  border: 1px solid #fff;
+  background: #0b2456;
+}
+[data-theme="blueprint"] .brand {
+  text-transform: uppercase;
+}
+[data-theme="blueprint"] .site-header,
+[data-theme="blueprint"] .event-row,
+[data-theme="blueprint"] .field input,
+[data-theme="blueprint"] .field select {
+  background-color: #0b2456;
+}
+[data-theme="blueprint"] .meta-value {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+@container theme-blueprint (max-width: 520px) {
+  [data-theme="blueprint"] .filters,
+  [data-theme="blueprint"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="blueprint"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="blueprint"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="blueprint"] .btn {
+    width: 100%;
+  }
+}

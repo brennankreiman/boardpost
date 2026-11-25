@@ -1,0 +1,209 @@
+/* 2027-06 bleach — sand ground, black type */
+
+[data-theme="bleach"],
+[data-theme="bleach"] *,
+[data-theme="bleach"] *::before,
+[data-theme="bleach"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="bleach"] {
+  container-type: inline-size;
+  container-name: theme-bleach;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #e7d6b8;
+  color: #141414;
+  color-scheme: light;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+}
+
+[data-theme="bleach"] button,
+[data-theme="bleach"] input,
+[data-theme="bleach"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="bleach"] p {
+  margin: 0;
+}
+
+[data-theme="bleach"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="bleach"] .brand {
+  margin: 0;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-size: 2.05rem;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #141414;
+}
+
+[data-theme="bleach"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #2a2622;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="bleach"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="bleach"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #2a2622;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bleach"] .field input,
+[data-theme="bleach"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #141414;
+  border-radius: 0;
+  background: transparent;
+  color: #141414;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="bleach"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #141414;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-theme="bleach"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="bleach"] .event-name {
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="bleach"] .event-location {
+  margin-top: 0.15rem;
+  color: #2a2622;
+  font-size: 0.82rem;
+}
+
+[data-theme="bleach"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #2a2622;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bleach"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="bleach"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #141414;
+  color: #e7d6b8;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bleach"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="bleach"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #141414;
+  border-radius: 0;
+  background: transparent;
+  color: #141414;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+@container theme-bleach (max-width: 520px) {
+  [data-theme="bleach"] .filters,
+  [data-theme="bleach"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="bleach"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="bleach"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="bleach"] .btn {
+    width: 100%;
+  }
+}

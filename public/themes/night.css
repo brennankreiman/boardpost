@@ -1,0 +1,213 @@
+/* 2027-07 night — dark ground, lime text */
+
+[data-theme="night"],
+[data-theme="night"] *,
+[data-theme="night"] *::before,
+[data-theme="night"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="night"] {
+  container-type: inline-size;
+  container-name: theme-night;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #10140e;
+  color: #d8ff4a;
+  color-scheme: dark;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+}
+
+[data-theme="night"] button,
+[data-theme="night"] input,
+[data-theme="night"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="night"] p {
+  margin: 0;
+}
+
+[data-theme="night"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="night"] .brand {
+  margin: 0;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-size: 2.15rem;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #d8ff4a;
+}
+
+[data-theme="night"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #b7d36a;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="night"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="night"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #b7d36a;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="night"] .field input,
+[data-theme="night"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #3c5224;
+  border-radius: 8px;
+  background: #0c100b;
+  color: #d8ff4a;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="night"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #31421d;
+  border-radius: 12px;
+  background: #171d14;
+}
+
+[data-theme="night"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="night"] .event-name {
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="night"] .event-location {
+  margin-top: 0.15rem;
+  color: #b7d36a;
+  font-size: 0.82rem;
+}
+
+[data-theme="night"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #b7d36a;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="night"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="night"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #d8ff4a;
+  color: #10140e;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="night"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="night"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #d8ff4a;
+  border-radius: 999px;
+  background: #d8ff4a;
+  color: #10140e;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="night"] .brand {
+  text-shadow: 0 0 18px rgba(216, 255, 74, 0.35);
+}
+
+@container theme-night (max-width: 520px) {
+  [data-theme="night"] .filters,
+  [data-theme="night"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="night"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="night"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="night"] .btn {
+    width: 100%;
+  }
+}

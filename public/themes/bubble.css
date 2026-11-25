@@ -1,0 +1,252 @@
+/* 2027-05 bubble — glossy pills, large radii, chrome highlights */
+
+[data-theme="bubble"],
+[data-theme="bubble"] *,
+[data-theme="bubble"] *::before,
+[data-theme="bubble"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="bubble"] {
+  container-type: inline-size;
+  container-name: theme-bubble;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: linear-gradient(165deg, #f7f9fd 0%, #d5e0f0 100%);
+  color: #1a2433;
+  color-scheme: light;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background:
+    radial-gradient(90% 70% at 0% 0%, #ffffff 0%, transparent 55%),
+    radial-gradient(80% 80% at 100% 100%, #c5d4ea 0%, transparent 50%),
+    linear-gradient(165deg, #eef3fb, #d4deee);
+  border-radius: 36px;
+  padding: 1.05rem 1.05rem 1.15rem;
+  box-shadow: inset 0 1px 0 #fff, 0 12px 28px rgba(70, 90, 130, 0.12);
+
+}
+
+[data-theme="bubble"] button,
+[data-theme="bubble"] input,
+[data-theme="bubble"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="bubble"] p {
+  margin: 0;
+}
+
+[data-theme="bubble"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="bubble"] .brand {
+  margin: 0;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: #1a2433;
+}
+
+[data-theme="bubble"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #5c6d86;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="bubble"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="bubble"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #5c6d86;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bubble"] .field input,
+[data-theme="bubble"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #9aadc6;
+  border-radius: 999px;
+  background: #f8fbff;
+  color: #1a2433;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="bubble"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #9aadc6;
+  border-radius: 32px;
+  background: #f4f7fb;
+}
+
+[data-theme="bubble"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="bubble"] .event-name {
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="bubble"] .event-location {
+  margin-top: 0.15rem;
+  color: #5c6d86;
+  font-size: 0.82rem;
+}
+
+[data-theme="bubble"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #5c6d86;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bubble"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="bubble"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #e7eef8;
+  color: #1a2433;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="bubble"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="bubble"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #7f97b6;
+  border-radius: 999px;
+  background: #d5e4f8;
+  color: #152033;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="bubble"] .brand {
+  display: inline-block;
+  padding: 0.28rem 0.85rem 0.32rem;
+  border-radius: 999px;
+  background-image: linear-gradient(180deg, #ffffff 0%, #e7eef7 38%, #b7c6da 52%, #f8fbff 100%);
+  border: 1px solid #93a6c2;
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(90, 110, 140, 0.35), 0 8px 16px rgba(60, 80, 120, 0.16);
+}
+[data-theme="bubble"] .field input,
+[data-theme="bubble"] .field select,
+[data-theme="bubble"] .event-row,
+[data-theme="bubble"] .category-pill {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.45) 46%, rgba(190, 204, 224, 0.35) 100%);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -6px 10px rgba(120, 140, 170, 0.16), 0 8px 16px rgba(70, 90, 130, 0.1);
+}
+[data-theme="bubble"] .btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #d5e2f4;
+  background-image: linear-gradient(180deg, #ffffff 0%, #d7e6ff 28%, #7ea2d6 47%, #f5f9ff 53%, #c5d6f0 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(70, 100, 150, 0.28), 0 10px 18px rgba(50, 70, 110, 0.2);
+  padding: 0.72rem 1.25rem;
+}
+[data-theme="bubble"] .btn::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 4px;
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+@container theme-bubble (max-width: 520px) {
+  [data-theme="bubble"] .filters,
+  [data-theme="bubble"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="bubble"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="bubble"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="bubble"] .btn {
+    width: 100%;
+  }
+}

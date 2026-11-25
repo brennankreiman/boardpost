@@ -1,0 +1,239 @@
+/* 2027-12 ice — pale cyan, wide letter-spacing */
+
+[data-theme="ice"],
+[data-theme="ice"] *,
+[data-theme="ice"] *::before,
+[data-theme="ice"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="ice"] {
+  container-type: inline-size;
+  container-name: theme-ice;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #e5f8fb;
+  color: #163840;
+  color-scheme: light;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+}
+
+[data-theme="ice"] button,
+[data-theme="ice"] input,
+[data-theme="ice"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="ice"] p {
+  margin: 0;
+}
+
+[data-theme="ice"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="ice"] .brand {
+  margin: 0;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-weight: 560;
+  font-size: 1.55rem;
+  letter-spacing: 0.18em;
+  line-height: 0.95;
+  color: #163840;
+}
+
+[data-theme="ice"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #4d7480;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="ice"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="ice"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #4d7480;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ice"] .field input,
+[data-theme="ice"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #b7e4ea;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #163840;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="ice"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #b7e4ea;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+[data-theme="ice"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="ice"] .event-name {
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="ice"] .event-location {
+  margin-top: 0.15rem;
+  color: #4d7480;
+  font-size: 0.82rem;
+}
+
+[data-theme="ice"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #4d7480;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ice"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="ice"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+  background: transparent;
+  color: #163840;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ice"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="ice"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #163840;
+  border-radius: 2px;
+  background: #163840;
+  color: #e5f8fb;
+  font-family: "Outfit", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="ice"] .brand {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+[data-theme="ice"] .tagline,
+[data-theme="ice"] .field,
+[data-theme="ice"] .meta-label,
+[data-theme="ice"] .btn,
+[data-theme="ice"] .category-pill {
+  letter-spacing: 0.12em;
+}
+[data-theme="ice"] .event-name {
+  letter-spacing: 0.08em;
+}
+[data-theme="ice"] .category-pill {
+  border: 1px solid #8fd0da;
+}
+
+@container theme-ice (max-width: 520px) {
+  [data-theme="ice"] .filters,
+  [data-theme="ice"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="ice"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="ice"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="ice"] .btn {
+    width: 100%;
+  }
+}
+
+@container theme-ice (max-width: 520px) {
+
+[data-theme="ice"] .brand {
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+}
+[data-theme="ice"] .tagline {
+  letter-spacing: 0.04em;
+}
+
+}

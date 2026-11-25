@@ -1,0 +1,260 @@
+/* 2028-03 earlyweb — tiled background, Times headings, beveled buttons, bright blue links */
+
+[data-theme="earlyweb"],
+[data-theme="earlyweb"] *,
+[data-theme="earlyweb"] *::before,
+[data-theme="earlyweb"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="earlyweb"] {
+  container-type: inline-size;
+  container-name: theme-earlyweb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #000080;
+  color: #000;
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background-color: #000080;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2284%22%20height%3D%2284%22%20viewBox%3D%220%200%2084%2084%22%3E%3Crect%20width%3D%2284%22%20height%3D%2284%22%20fill%3D%22%23000080%22%2F%3E%3Cpolygon%20points%3D%2214%2C4%2016.4%2C11%2024%2C11%2017.8%2C15.4%2020.2%2C22.6%2014%2C18.2%207.8%2C22.6%2010.2%2C15.4%204%2C11%2011.6%2C11%22%20fill%3D%22%23ffff00%22%2F%3E%3Cpolygon%20points%3D%2258%2C36%2060%2C42%2066%2C42%2061.2%2C45.8%2063%2C52%2058%2C48%2053%2C52%2054.8%2C45.8%2050%2C42%2056%2C42%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpolygon%20points%3D%2236%2C58%2037.4%2C62%2042%2C62%2038.4%2C64.6%2040%2C69%2036%2C66.2%2032%2C69%2033.6%2C64.6%2030%2C62%2034.6%2C62%22%20fill%3D%22%23ff66cc%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: repeat;
+  padding: 12px;
+  gap: 8px;
+
+}
+
+[data-theme="earlyweb"] button,
+[data-theme="earlyweb"] input,
+[data-theme="earlyweb"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="earlyweb"] p {
+  margin: 0;
+}
+
+[data-theme="earlyweb"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="earlyweb"] .brand {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 0.95;
+  color: #000;
+}
+
+[data-theme="earlyweb"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="earlyweb"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="earlyweb"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="earlyweb"] .field input,
+[data-theme="earlyweb"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid #808080;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="earlyweb"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 2px solid #808080;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+[data-theme="earlyweb"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="earlyweb"] .event-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="earlyweb"] .event-location {
+  margin-top: 0.15rem;
+  color: #000;
+  font-size: 0.82rem;
+}
+
+[data-theme="earlyweb"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #000;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="earlyweb"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="earlyweb"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #ffff00;
+  color: #000;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="earlyweb"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="earlyweb"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 3px solid #fff;
+  border-radius: 0;
+  background: #d4d0c8;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="earlyweb"] .site-header {
+  background: #ffffcc;
+  border: 2px solid #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 6px 8px;
+}
+[data-theme="earlyweb"] .brand,
+[data-theme="earlyweb"] .event-name,
+[data-theme="earlyweb"] .event-name a {
+  font-family: "Times New Roman", Times, serif;
+}
+[data-theme="earlyweb"] .tagline {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+[data-theme="earlyweb"] a:link {
+  color: #0000ee;
+  text-decoration: underline;
+}
+[data-theme="earlyweb"] a:visited {
+  color: #551a8b;
+  text-decoration: underline;
+}
+[data-theme="earlyweb"] .field input,
+[data-theme="earlyweb"] .field select {
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: inset 1px 1px 0 #404040;
+}
+[data-theme="earlyweb"] .event-row {
+  border-color: #808080 #fff #fff #808080;
+}
+[data-theme="earlyweb"] .category-pill {
+  border: 1px solid #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+[data-theme="earlyweb"] .btn {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+  padding: 3px 14px;
+}
+
+@container theme-earlyweb (max-width: 520px) {
+  [data-theme="earlyweb"] .filters,
+  [data-theme="earlyweb"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="earlyweb"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="earlyweb"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="earlyweb"] .btn {
+    width: 100%;
+  }
+}
