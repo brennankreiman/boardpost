@@ -1,0 +1,181 @@
+.field textarea {
+  appearance: none;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  font: 500 0.98rem/1.45 var(--font-body);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  text-transform: none;
+  letter-spacing: 0;
+  resize: vertical;
+  min-height: 6.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.field textarea:focus {
+  outline: none;
+  border-color: var(--lane);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(200, 241, 53, 0.45);
+}
+
+.event-row {
+  cursor: pointer;
+}
+
+.event-row a,
+.event-row button {
+  cursor: pointer;
+}
+
+.event-row.is-expanded {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(31, 42, 24, 0.28);
+}
+
+.event-row.is-expanded:hover {
+  transform: none;
+}
+
+.event-row.is-expanded .event-location,
+.event-row.is-expanded > :not(.event-main):not(.event-detail) {
+  display: none;
+}
+
+.event-detail {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--line);
+  cursor: default;
+}
+
+.detail-location {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.detail-copy {
+  margin: 0;
+  max-width: 65ch;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.event-detail .detail-location,
+.event-detail .detail-copy,
+.event-detail .detail-facts,
+.event-detail .detail-actions {
+  margin: 0;
+}
+
+.event-detail .detail-dismiss {
+  margin-left: auto;
+}
+
+.detail-dialog [hidden],
+.event-detail [hidden] {
+  display: none !important;
+}
+
+.detail-dialog {
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: min(42rem, calc(100vh - 2rem));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f7faf3;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.detail-dialog::backdrop {
+  background: rgba(18, 22, 15, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.detail-sheet {
+  padding: 1.35rem 1.45rem 1.5rem;
+}
+
+.detail-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.detail-heading {
+  min-width: 0;
+}
+
+.detail-heading .category-pill {
+  margin: 0;
+}
+
+.detail-dialog h2 {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.detail-dialog .detail-facts {
+  margin-top: 1.15rem;
+}
+
+.detail-dialog .detail-copy {
+  margin-top: 1rem;
+}
+
+.detail-dialog .detail-actions {
+  margin-top: 1.2rem;
+}
+
+.detail-dialog .icon-close {
+  flex-shrink: 0;
+}
+
+.detail-dialog .icon-close:focus-visible,
+.detail-dismiss:focus-visible,
+.detail-actions a:focus-visible {
+  outline: 2px solid var(--lane);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .detail-facts {
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .event-detail {
+    display: none;
+  }
+}

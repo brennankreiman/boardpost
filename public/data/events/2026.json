@@ -37,6 +37,8 @@
     "registrationDeadline": "2026-11-28",
     "cost": "$55",
     "registrationUrl": "https://www.crossvegas.com/",
+    "moreInfoUrl": "https://www.crossvegas.com/race-info",
+    "description": "Night cyclocross in Las Vegas. Amateur and pro fields race a short, spectator-friendly course under the lights.",
     "category": "Cyclocross",
     "location": "Las Vegas, NV",
     "source": "seed"

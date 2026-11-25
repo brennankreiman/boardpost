@@ -1,4 +1,5 @@
 import { CATEGORIES } from "./categories.js";
+import { optionalDetailIssues } from "./event-detail.js";
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
@@ -55,5 +56,6 @@ export function eventIssues(event) {
     }
   }
 
+  issues.push(...optionalDetailIssues(event));
   return issues;
 }
