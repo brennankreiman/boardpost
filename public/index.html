@@ -21,8 +21,7 @@
         <p class="tagline">Public cycling events, posted in one place.</p>
       </div>
       <div class="header-actions">
-        <button type="button" class="btn btn-ghost btn-small" id="clear-filters">Clear filters</button>
-        <button type="button" class="btn btn-primary" id="open-form">Add an event</button>
+        <button type="button" class="btn btn-primary" id="open-form">Submit an event</button>
       </div>
     </header>
 
@@ -38,14 +37,21 @@
             <option value="All">All</option>
           </select>
         </label>
-        <label class="field">
-          <span>From</span>
-          <input type="date" id="filter-from" />
-        </label>
-        <label class="field">
-          <span>To</span>
-          <input type="date" id="filter-to" />
-        </label>
+        <div class="date-clear-row">
+          <div class="date-range">
+            <label class="field">
+              <span>From</span>
+              <input type="date" id="filter-from" />
+            </label>
+            <label class="field">
+              <span>To</span>
+              <input type="date" id="filter-to" />
+            </label>
+          </div>
+          <div class="clear-slot">
+            <button type="button" class="btn btn-ghost btn-clear" id="clear-filters">Clear filters</button>
+          </div>
+        </div>
       </section>
 
       <section class="board-meta">
