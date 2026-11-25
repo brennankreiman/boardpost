@@ -11,13 +11,22 @@ Live site, once Pages is enabled on the public repository: [https://brennankreim
 - Upcoming events only, soonest first. Past events stay hidden until a From or To date includes them.
 - Filters for search, category (A→Z), and a date range. Clear filters returns to the upcoming view.
 - The page loads `public/data/events/index.json`, then only the year files that range needs.
-- A Register button appears only when the event has a registration URL.
+- A Register link appears when the event has a registration URL. A More info link appears when the event has its own page. Either link can be present without the other.
+- Click an event for the full listing. A wide window opens it in a dialog over the board. A narrow window expands that row.
 - Categories: Alleycat, Charity, Cycle Messenger, Cyclocross, Gravel, MTB, Other, Road, Track.
 - Seed events include NACCC 2026 (Guadalajara) and NACCC 2027 (Toronto).
 
+## Open an event
+
+Click an event to read the listing: name, category, location, event date, register-by date, cost, and description. More info opens the event's own page when that link is set. Register opens signup when a registration link is set. The two links are separate, and either one can be missing.
+
+On a wide screen the listing opens in a dialog over the board. The list underneath stays where it is. Escape or the close button dismisses the dialog. On a narrow screen the same listing expands inside that row, and the rest of the page stays usable. Opening another event collapses the one that was open.
+
+While a listing is open, the page address includes `?event=` and that event's id. A shared or reloaded link opens the listing again when the board has loaded that event.
+
 ## Add an event
 
-**Add an event** on the board asks for the name, event date, register-by date, cost, category, and optional location and registration URL. The visitor stays on the board. The form posts to the Cloudflare Worker at `https://boardpost-submissions.brennankreiman.workers.dev`.
+**Add an event** on the board asks for the name, event date, register-by date, cost, category, and optional location, description, registration URL, and more info URL. A description can be up to 600 characters. A more info URL has to start with http:// or https://. The visitor stays on the board. The form posts to the Cloudflare Worker at `https://boardpost-submissions.brennankreiman.workers.dev`.
 
 The worker checks the fields, then rejects the submission when an event in that year's file already has the same name and date, or the same registration URL and date. A different day is allowed. Accepted submissions become a GitHub issue labeled `submission`, with the JSON object to add. The issue is the review queue. The event shows on the board only after that object is merged into the year file.
 

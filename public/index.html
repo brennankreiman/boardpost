@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="detail.css" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -96,8 +97,21 @@
             <input name="registrationUrl" type="url" placeholder="https://" />
           </label>
           <label class="field span-2">
+            <span>More info URL <em>(optional)</em></span>
+            <input name="moreInfoUrl" type="url" placeholder="https://" />
+          </label>
+          <label class="field span-2">
             <span>Location <em>(optional)</em></span>
             <input name="location" maxlength="80" placeholder="City, ST" />
+          </label>
+          <label class="field span-2">
+            <span>Description <em>(optional)</em></span>
+            <textarea
+              name="description"
+              maxlength="600"
+              rows="4"
+              placeholder="What riders should know"
+            ></textarea>
           </label>
         </div>
 
@@ -108,6 +122,38 @@
           <button type="submit" class="btn btn-primary">Submit for review</button>
         </footer>
       </form>
+    </dialog>
+
+    <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title">
+      <div class="detail-sheet">
+        <div class="detail-top">
+          <div class="detail-heading">
+            <p class="category-pill" id="detail-category"></p>
+            <h2 id="detail-title"></h2>
+            <p class="detail-location" id="detail-location" hidden></p>
+          </div>
+          <button type="button" class="icon-close" id="detail-close" aria-label="Close">×</button>
+        </div>
+        <div class="detail-facts">
+          <div>
+            <span class="meta-label">Event date</span>
+            <div class="meta-value" id="detail-event-date"></div>
+          </div>
+          <div class="deadline" id="detail-deadline-wrap">
+            <span class="meta-label">Register by</span>
+            <div class="meta-value" id="detail-deadline"></div>
+          </div>
+          <div>
+            <span class="meta-label">Cost</span>
+            <div class="meta-value" id="detail-cost"></div>
+          </div>
+        </div>
+        <p class="detail-copy" id="detail-description" hidden></p>
+        <div class="detail-actions">
+          <a class="btn btn-ghost" id="detail-more" target="_blank" rel="noopener noreferrer" hidden>More info</a>
+          <a class="btn btn-register" id="detail-register" target="_blank" rel="noopener noreferrer" hidden>Register</a>
+        </div>
+      </div>
     </dialog>
 
     <script type="module" src="app.js"></script>

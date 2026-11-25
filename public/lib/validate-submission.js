@@ -1,4 +1,5 @@
 import { CATEGORIES } from "./categories.js";
+import { optionalDetailFields, optionalDetailIssues } from "./event-detail.js";
 import { isISODate } from "./validate-event.js";
 
 const LIMITS = {
@@ -48,6 +49,7 @@ export function submissionIssues(body) {
     }
   }
 
+  issues.push(...optionalDetailIssues(body));
   return issues;
 }
 
@@ -64,5 +66,6 @@ export function submissionRecord(body) {
   const registrationUrl = typeof body.registrationUrl === "string" ? body.registrationUrl.trim() : "";
   if (location) record.location = location;
   if (registrationUrl) record.registrationUrl = registrationUrl;
+  Object.assign(record, optionalDetailFields(body));
   return record;
 }
