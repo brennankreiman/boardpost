@@ -1,0 +1,313 @@
+/* 2027-03 win95 — flat gray, Tahoma, beveled buttons and a title-bar header */
+
+[data-theme="win95"],
+[data-theme="win95"] *,
+[data-theme="win95"] *::before,
+[data-theme="win95"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="win95"] {
+  container-type: inline-size;
+  container-name: theme-win95;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #c0c0c0;
+  color: #000;
+  color-scheme: light;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  padding: 3px;
+  gap: 6px;
+  font-size: 12px;
+  border: 2px solid #fff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  box-shadow: 1px 1px 0 #000;
+
+}
+
+[data-theme="win95"] button,
+[data-theme="win95"] input,
+[data-theme="win95"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="win95"] p {
+  margin: 0;
+}
+
+[data-theme="win95"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="win95"] .brand {
+  margin: 0;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 0.95;
+  color: #000;
+}
+
+[data-theme="win95"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #000;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="win95"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="win95"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="win95"] .field input,
+[data-theme="win95"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid #808080;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="win95"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 2px solid #808080;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+[data-theme="win95"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="win95"] .event-name {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="win95"] .event-location {
+  margin-top: 0.15rem;
+  color: #000;
+  font-size: 0.82rem;
+}
+
+[data-theme="win95"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #000;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="win95"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="win95"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #c0c0c0;
+  color: #000;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="win95"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="win95"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid #fff;
+  border-radius: 0;
+  background: #c0c0c0;
+  color: #000;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="win95"] .site-header {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #000080;
+  color: #fff;
+  padding: 3px 4px;
+  gap: 8px;
+}
+[data-theme="win95"] .site-header::after {
+  content: "×";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 14px;
+  flex: 0 0 auto;
+  background: #c0c0c0;
+  color: #000;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  border: 2px solid #fff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+}
+[data-theme="win95"] .brand {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+[data-theme="win95"] .tagline {
+  display: none;
+}
+[data-theme="win95"] .field {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+[data-theme="win95"] .field input,
+[data-theme="win95"] .field select {
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: inset 1px 1px 0 #404040;
+  padding: 3px 4px;
+  font-size: 12px;
+}
+[data-theme="win95"] .event-row {
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: inset 1px 1px 0 #404040;
+  padding: 8px;
+}
+[data-theme="win95"] .event-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+[data-theme="win95"] .meta-label,
+[data-theme="win95"] .event-location,
+[data-theme="win95"] .meta-value {
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+[data-theme="win95"] .category-pill {
+  border: 2px solid #fff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+[data-theme="win95"] .btn {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 4px 14px;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #808080;
+}
+
+@container theme-win95 (max-width: 520px) {
+  [data-theme="win95"] .filters,
+  [data-theme="win95"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="win95"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="win95"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="win95"] .btn {
+    width: 100%;
+  }
+}
+
+@container theme-win95 (max-width: 520px) {
+
+[data-theme="win95"] .site-header {
+  flex-direction: row;
+  align-items: center;
+}
+[data-theme="win95"] .brand {
+  font-size: 12px;
+}
+
+}

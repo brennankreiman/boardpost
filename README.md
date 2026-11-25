@@ -15,6 +15,13 @@ Live site, once Pages is enabled on the public repository: [https://brennankreim
 - Categories: Alleycat, Charity, Cycle Messenger, Cyclocross, Gravel, MTB, Other, Road, Track.
 - Seed events include NACCC 2026 (Guadalajara) and NACCC 2027 (Toronto).
 
+## Monthly looks
+
+[theme-preview.html](public/theme-preview.html) is a gallery of monthly looks. It is not the live board yet. Each month is a small board with the name, a filter row, an event row, and a button, shown at desktop width and phone width so the look can be reviewed on its own.
+
+The sixteen months are 2026-12 frost, 2027-01 ink, 2027-02 clay, 2027-03 win95, 2027-04 grid, 2027-05 bubble, 2027-06 bleach, 2027-07 night, 2027-08 fair, 2027-09 terminal, 2027-10 newsprint, 2027-11 wool, 2027-12 ice, 2028-01 blueprint, 2028-02 riso, and 2028-03 earlyweb.
+
+
 ## Add an event
 
 **Add an event** on the board asks for the name, event date, register-by date, cost, category, and optional location and registration URL. The visitor stays on the board. The form posts to the Cloudflare Worker at `https://boardpost-submissions.brennankreiman.workers.dev`.

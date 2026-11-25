@@ -1,0 +1,223 @@
+/* 2027-01 ink — newsprint, black and white */
+
+[data-theme="ink"],
+[data-theme="ink"] *,
+[data-theme="ink"] *::before,
+[data-theme="ink"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="ink"] {
+  container-type: inline-size;
+  container-name: theme-ink;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #f3f1ea;
+  color: #111111;
+  color-scheme: light;
+  font-family: "Newsreader", "Iowan Old Style", Palatino, serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+}
+
+[data-theme="ink"] button,
+[data-theme="ink"] input,
+[data-theme="ink"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="ink"] p {
+  margin: 0;
+}
+
+[data-theme="ink"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="ink"] .brand {
+  margin: 0;
+  font-family: "Newsreader", "Iowan Old Style", Palatino, serif;
+  font-weight: 650;
+  font-size: 2.35rem;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: #111111;
+}
+
+[data-theme="ink"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #333333;
+  font-family: "Newsreader", "Iowan Old Style", Palatino, serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="ink"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="ink"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #333333;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ink"] .field input,
+[data-theme="ink"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #111;
+  border-radius: 0;
+  background: #fff;
+  color: #111111;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="ink"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 0 solid transparent;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-theme="ink"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="ink"] .event-name {
+  font-family: "Newsreader", "Iowan Old Style", Palatino, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="ink"] .event-location {
+  margin-top: 0.15rem;
+  color: #333333;
+  font-size: 0.82rem;
+}
+
+[data-theme="ink"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #333333;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ink"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="ink"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #111;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="ink"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="ink"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #111;
+  border-radius: 0;
+  background: #111;
+  color: #fff;
+  font-family: "Newsreader", "Iowan Old Style", Palatino, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="ink"] .site-header {
+  border-bottom: 3px solid #111;
+  padding-bottom: 0.45rem;
+}
+[data-theme="ink"] .event-row {
+  border-bottom: 1px solid #111;
+  padding-left: 0;
+  padding-right: 0;
+}
+[data-theme="ink"] .filters {
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.7rem;
+}
+
+@container theme-ink (max-width: 520px) {
+  [data-theme="ink"] .filters,
+  [data-theme="ink"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="ink"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="ink"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="ink"] .btn {
+    width: 100%;
+  }
+}

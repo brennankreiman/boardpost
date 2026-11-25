@@ -1,0 +1,268 @@
+/* 2028-02 riso — fluorescent pink and blue, halftone texture */
+
+[data-theme="riso"],
+[data-theme="riso"] *,
+[data-theme="riso"] *::before,
+[data-theme="riso"] *::after {
+  box-sizing: border-box;
+}
+
+[data-theme="riso"] {
+  container-type: inline-size;
+  container-name: theme-riso;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.9rem 1rem 1rem;
+  background: #fff5fb;
+  color: #1a0614;
+  color-scheme: light;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  
+  background-color: #fff5fb;
+  background-image:
+    radial-gradient(#ff3dbe 0.95px, transparent 1.05px),
+    radial-gradient(#2a43ff 0.95px, transparent 1.05px);
+  background-size: 6px 6px, 7px 7px;
+  background-position: 0 0, 2px 3px;
+  color: #1a0614;
+
+}
+
+[data-theme="riso"] button,
+[data-theme="riso"] input,
+[data-theme="riso"] select {
+  font: inherit;
+  color: inherit;
+}
+
+[data-theme="riso"] p {
+  margin: 0;
+}
+
+[data-theme="riso"] .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+[data-theme="riso"] .brand {
+  margin: 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: #1a0614;
+}
+
+[data-theme="riso"] .tagline {
+  margin: 0.28rem 0 0;
+  max-width: 36rem;
+  color: #3a1830;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+[data-theme="riso"] .filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 0.55rem;
+  align-items: end;
+}
+
+[data-theme="riso"] .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  color: #3a1830;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="riso"] .field input,
+[data-theme="riso"] .field select {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid #2a43ff;
+  border-radius: 0;
+  background: #fff;
+  color: #1a0614;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+[data-theme="riso"] .event-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr) minmax(0, 0.9fr) minmax(0, 0.55fr) auto;
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  padding: 0.75rem 0.8rem;
+  border: 0 solid transparent;
+  border-radius: 0;
+  background: #2a43ff;
+}
+
+[data-theme="riso"] .event-row > * {
+  min-width: 0;
+}
+
+[data-theme="riso"] .event-name {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+[data-theme="riso"] .event-location {
+  margin-top: 0.15rem;
+  color: #3a1830;
+  font-size: 0.82rem;
+}
+
+[data-theme="riso"] .meta-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #3a1830;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="riso"] .meta-value {
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+[data-theme="riso"] .category-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 0;
+  background: #ff3dbe;
+  color: #1a0614;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[data-theme="riso"] .event-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-theme="riso"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid #2a43ff;
+  border-radius: 0;
+  background: #ff3dbe;
+  color: #1a0614;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+[data-theme="riso"] .brand {
+  text-transform: uppercase;
+  line-height: 0.85;
+  color: #1a0614;
+  text-shadow: 4px 3px 0 #2a43ff;
+}
+[data-theme="riso"] .site-header {
+  background-color: #ff3dbe;
+  background-image: radial-gradient(rgba(42, 67, 255, 0.55) 0.85px, transparent 1px);
+  background-size: 4px 4px;
+  padding: 0.55rem 0.7rem 0.6rem;
+}
+[data-theme="riso"] .tagline {
+  color: #1a0614;
+}
+[data-theme="riso"] .event-row {
+  color: #fff;
+  background-color: #2a43ff;
+  background-image: radial-gradient(rgba(255, 61, 190, 0.75) 0.9px, transparent 1.05px);
+  background-size: 4px 4px;
+  box-shadow: 7px 6px 0 #ff3dbe;
+}
+[data-theme="riso"] .event-location,
+[data-theme="riso"] .meta-label,
+[data-theme="riso"] .meta-value {
+  color: #fff;
+}
+[data-theme="riso"] .event-name,
+[data-theme="riso"] .field,
+[data-theme="riso"] .meta-label,
+[data-theme="riso"] .btn,
+[data-theme="riso"] .category-pill {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  letter-spacing: 0.04em;
+}
+[data-theme="riso"] .btn {
+  box-shadow: 3px 3px 0 #2a43ff;
+  text-transform: uppercase;
+}
+
+@container theme-riso (max-width: 520px) {
+  [data-theme="riso"] .filters,
+  [data-theme="riso"] .event-row {
+    grid-template-columns: 1fr;
+  }
+
+  [data-theme="riso"] .site-header {
+    align-items: flex-start;
+  }
+
+  [data-theme="riso"] .event-actions {
+    justify-content: stretch;
+  }
+
+  [data-theme="riso"] .btn {
+    width: 100%;
+  }
+}
+
+@container theme-riso (max-width: 520px) {
+
+[data-theme="riso"] .brand {
+  font-size: 2rem;
+}
+[data-theme="riso"] .event-row {
+  box-shadow: 4px 4px 0 #ff3dbe;
+}
+
+}
